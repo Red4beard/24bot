@@ -4,231 +4,47 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
+
 <!doctype html>
-<html lang="ru">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      body {
-        background-color: #000033;
-        color: #e0e0e0;
-        font-family: 'Segoe UI', sans-serif;
-        margin: 0;
-        line-height: 1.5;
-        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-        position: relative;
-        overflow-x: hidden;
-        background-attachment: fixed;
-      }
-
-      h1, h2 {
-        color: #ffffff;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      p {
-        font-size: 0.95rem;
-        margin-bottom: 0.8rem;
-        text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-      }
-
-      a {
-        color: #66ccff;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      ul {
-        font-size: 0.95rem;
-        padding-left: 1.5rem;
-        text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-      }
-
-      li {
-        margin-bottom: 0.5rem;
-      }
-
-      .planet-link::before {
-        content: "🪐 ";
-      }
-
-      /* Контент без фона */
-      main {
-        width: 33%;
-        max-width: 500px;
-        margin-left: 5%;
-        padding: 2rem;
-        position: relative;
-        z-index: 10;
-      }
-
-      section {
-        margin-bottom: 1.5rem;
-      }
-
-      /* Космический фон и элементы */
-      .cosmic-background {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        overflow: hidden;
-      }
-
-      .stars {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-image: 
-          radial-gradient(1px 1px at 25% 25%, white 100%, transparent 100%),
-          radial-gradient(1px 1px at 75% 75%, white 100%, transparent 100%),
-          radial-gradient(2px 2px at 10% 90%, white 100%, transparent 100%),
-          radial-gradient(2px 2px at 90% 10%, white 100%, transparent 100%),
-          radial-gradient(1px 1px at 40% 60%, white 100%, transparent 100%);
-        background-repeat: repeat;
-        background-size: 200px 200px, 250px 250px, 150px 150px, 300px 300px, 220px 220px;
-        opacity: 0.3;
-      }
-
-      .planet {
-        position: absolute;
-        top: 50%;
-        right: 25%;
-        transform: translateY(-50%);
-        width: 35vw;
-        height: 35vw;
-        border-radius: 50%;
-        box-shadow: 0 0 80px rgba(100, 200, 255, 0.3);
-        background-size: cover;
-        opacity: 0.9;
-      }
-
-      .nebula {
-        position: absolute;
-        top: 30%;
-        right: 15%;
-        width: 60%;
-        height: 50%;
-        background: radial-gradient(ellipse at center, rgba(100, 200, 255, 0.1) 0%, rgba(50, 100, 150, 0) 70%);
-        opacity: 0.5;
-        filter: blur(30px);
-      }
-
-      /* Левая часть (1/3) затемнена для лучшей читаемости без использования отдельного фона */
-      .left-dim {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 33%;
-        height: 100%;
-        background: linear-gradient(to right, rgba(0, 0, 20, 0.7), rgba(0, 0, 20, 0));
-        z-index: 2;
-      }
-
-      /* Адаптивный дизайн */
-      @media (max-width: 1200px) {
-        main {
-          width: 40%;
-        }
-        .left-dim {
-          width: 40%;
-        }
-      }
-
-      @media (max-width: 900px) {
-        main {
-          width: 50%;
-        }
-        .left-dim {
-          width: 50%;
-        }
-      }
-
-      @media (max-width: 768px) {
-        main {
-          width: 80%;
-          margin: 0 auto;
-          padding: 1.5rem;
-        }
-        .left-dim {
-          width: 100%;
-          background: linear-gradient(to bottom, rgba(0, 0, 20, 0.7), rgba(0, 0, 20, 0.4));
-        }
-        .planet {
-          right: 50%;
-          transform: translate(50%, -50%);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="cosmic-background">
-      <div class="stars"></div>
-      <div class="nebula"></div>
-      <div class="planet"></div>
-    </div>
-    
-    <!-- Мягкое затемнение левой части для лучшей читаемости текста -->
-    <div class="left-dim"></div>
-
-    <Header />
-    <main>
-      <section>
-        <h1>Привет, Астронавты!</h1>
-        <p>
-          Добро пожаловать на мой персональный сайт-путешествие через необъятную вселенную технологий!
-        </p>
-        <p>
-          Я — исследователь, только начинающий своё движение к звёздам цифровой автоматизации. Здесь я делюсь своим прогрессом, идеями и находками.
-        </p>
-      </section>
-
-      <section>
-        <h2>Мои интересы</h2>
-        <p>
-          Создание <strong>AI-агентов</strong>, разработка <strong>ботов для Telegram</strong> и построение систем для <strong>автоматизации процессов</strong>.
-          С каждым днём я открываю новые горизонты и стремлюсь сделать технологии ближе каждому.
-        </p>
-      </section>
-
-      <section>
-        <h2>Инструменты — мои космические станции</h2>
-        <ul>
-          <li><a class="planet-link" href="https://n8n.io" target="_blank">n8n</a> — визуальный конструктор автоматизаций</li>
-          <li><a class="planet-link" href="https://www.make.com" target="_blank">make.com</a> — универсальный сценарный движок</li>
-          <li><a class="planet-link" href="https://sendpulse.com/ru" target="_blank">SendPulse</a> — email и мессенджер автоматизации</li>
-          <li><a class="planet-link" href="https://www.activecampaign.com/" target="_blank">ActiveCampaign</a> — автоматизация маркетинга</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Цифровые капсулы времени</h2>
-        <p>
-          Одна из моих идей — <strong>цифровые капсулы времени</strong>: технология, позволяющая отправлять сообщения в будущее.
-          Представьте, что вы можете отправить в будущее самому себе или другу сообщение, которое активируется через месяцы или годы!
-        </p>
-      </section>
-
-      <section>
-        <h2>Присоединяйтесь к моему путешествию</h2>
-        <p>
-          Моя миссия — исследовать, учиться и делиться знаниями. Я только в начале пути, но каждый день учусь, тестирую и расту.<br />
-          Готовы исследовать галактики цифровых решений вместе? Погнали!
-        </p>
-      </section>
-    </main>
-    <Footer />
-  </body>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>🧑‍🚀 Hello, Astronauts!</h1>
+			<p>
+				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
+				template serves as a lightweight, minimally-styled starting point for anyone looking to build
+				a personal website, blog, or portfolio with Astro.
+			</p>
+			<p>
+				This template comes with a few integrations already configured in your
+				<code>astro.config.mjs</code> file. You can customize your setup with
+				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
+				React, or Vue to your project.
+			</p>
+			<p>Here are a few ideas on how to get started with the template:</p>
+			<ul>
+				<li>Edit this page in <code>src/pages/index.astro</code></li>
+				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
+				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
+				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
+				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+			</ul>
+			<p>
+				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
+					>read the docs
+				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+			</p>
+			<p>
+				Looking for a blog template with a bit more personality? Check out <a
+					href="https://github.com/Charca/astro-blog-template"
+					>astro-blog-template
+				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
 </html>
