@@ -1,64 +1,16 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Hero from '../components/Hero.astro'
+import Features from '../components/Features.astro'
+import Audience from '../components/Audience.astro'
+import Pricing from '../components/Pricing.astro'
+import CTA from '../components/CTA.astro'
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h2>🧑‍🚀 Привет, Астронавты!</h2>
-			<p>
-				Добро пожаловать на мой персональный сайт-путешествие через необъятную вселенную технологий!.
-			</p>
-			<p>
-				Я — исследователь, только начинающий своё движение к звёздам цифровой автоматизации. Здесь я делюсь своим прогрессом, идеями и находками.
-			</p>
-			<p> Мои интересы:</p>
-			<ul>
-				<li>Создание <strong>AI-агентов</strong></li>
-				<li>Разработка <strong>ботов для Telegram</strong></li>
-				<li>Построение систем для <strong>автоматизации процессов</strong></li>
-			</ul>
-			<p>
-				С каждым днём я открываю новые горизонты и стремлюсь сделать технологии ближе каждому.
-			</p>
-			<p> Инструменты — мои космические станции:</p>
-			<ul>
-				<li><a class="planet-link" href="https://n8n.io" target="_blank">n8n</a> — визуальный конструктор автоматизаций</li>
-          			<li><a class="planet-link" href="https://www.make.com" target="_blank">make.com</a> — универсальный сценарный движок</li>
-          			<li><a class="planet-link" href="https://sendpulse.com/ru" target="_blank">SendPulse</a> — email и мессенджер автоматизации</li>
-          			<li><a class="planet-link" href="https://www.activecampaign.com/" target="_blank">ActiveCampaign</a> — автоматизация маркетинга</li>
-			</ul>
-			<p>
-				Присоединяйтесь к моему путешествию.
-			</p>
-			<p>
-          			Моя миссия — исследовать, учиться и делиться знаниями. Я только в начале пути, но каждый день учусь, тестирую и расту.<br />
-          			Готовы исследовать галактики цифровых решений вместе? Погнали!
-       			</p>
-
-            <script src="https://app.nextbot.ru/chat-widget-bundle-ver2.js"></script>
-            <script>
-                initializeChatWidget({
-                    agentId: "bdb96bb9-c438-46d0-906c-20925830f777",
-                    chatIconLineColor: "#1a73e8",
-                    chatIconBackgroundColor: "#fff",
-                    secondsToAutoinvite: "0",
-                    messageAutoInvite: "Привет! Я могу помочь с любыми вопросами!",
-                    bgColorAutoInvite: "#9ecceb",
-                    textColorAutoInvite: "#000000",
-                    widgetBottom: "30",
-                    widgetRight: "30",
-                });
-            </script>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout>
+  <Hero />
+  <Features />
+  <Audience />
+  <Pricing />
+  <CTA />
+</BaseLayout>

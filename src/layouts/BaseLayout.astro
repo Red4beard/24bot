@@ -1,0 +1,35 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<html lang="ru">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-[#0e0e10] text-white font-sans leading-relaxed">
+    <Header />
+    <main class="max-w-screen-xl mx-auto px-6">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- NEXTBOT чат -->
+    <script src="https://app.nextbot.ru/chat-widget-bundle-ver2.js"></script>
+    <script>
+      initializeChatWidget({
+        agentId: "bdb96bb9-c438-46d0-906c-20925830f777",
+        chatIconLineColor: "#fff",
+        chatIconBackgroundColor: "#6881a1",
+        secondsToAutoinvite: "0",
+        messageAutoInvite: "Привет! Я могу помочь с любыми вопросами!",
+        bgColorAutoInvite: "#9ecceb",
+        textColorAutoInvite: "#000000",
+        widgetBottom: "30",
+        widgetRight: "30",
+      });
+    </script>
+  </body>
+</html>
