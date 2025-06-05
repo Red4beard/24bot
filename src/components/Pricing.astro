@@ -1,39 +1,135 @@
 ---
 ---
+<section class="section" id="pricing">
+  <div class="container">
+    <h2 class="section-title">💸 Тарифы</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <h3 class="price-title">Старт</h3>
+        <div class="price-amount">5 000 ₽</div>
+        <ul class="price-features">
+          <li>Одноразовая настройка бота</li>
+          <li>Базовая конфигурация</li>
+          <li>Инструкция по использованию</li>
+          <li>Без технической поддержки</li>
+        </ul>
+        <p style="margin-bottom: 20px; opacity: 0.8; font-size: 0.9rem;">
+          Подходит для теста идеи или простого лендинга
+        </p>
+        <button class="cta-button">Выбрать Старт</button>
+      </div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-semibold text-center mb-12">💸 Тарифы</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    
-    <!-- Старт -->
-    <div class="bg-[#1a1a1d] border border-[#2e2e30] p-6 rounded-xl flex flex-col justify-between">
-      <div>
-        <h3 class="text-xl font-bold mb-2">Старт</h3>
-        <p class="text-3xl font-bold text-cyan-300 mb-4">5 000 ₽</p>
-        <p class="text-sm opacity-80 mb-4">Одноразовая настройка, без поддержки</p>
-        <p class="text-sm opacity-60">Подходит для теста идеи или лендинга</p>
+      <div class="price-card popular">
+        <h3 class="price-title">Оптимум</h3>
+        <div class="price-amount">15 000 ₽</div>
+        <ul class="price-features">
+          <li>Настройка бота под ваш бизнес</li>
+          <li>Подробная инструкция</li>
+          <li>1 месяц технической поддержки</li>
+          <li>Базовые доработки включены</li>
+          <li>Консультации по оптимизации</li>
+        </ul>
+        <p style="margin-bottom: 20px; opacity: 0.8; font-size: 0.9rem;">
+          Лучший выбор для первых продаж и клиентской поддержки
+        </p>
+        <button class="cta-button">Выбрать Оптимум</button>
+      </div>
+
+      <div class="price-card">
+        <h3 class="price-title">Премиум</h3>
+        <div class="price-amount">25 000 ₽</div>
+        <ul class="price-features">
+          <li>Всё включено из пакета Оптимум</li>
+          <li>3 месяца полного сопровождения</li>
+          <li>Расширенная аналитика</li>
+          <li>Интеграция с CRM системами</li>
+          <li>Приоритетная поддержка</li>
+          <li>Ежемесячные улучшения</li>
+        </ul>
+        <p style="margin-bottom: 20px; opacity: 0.8; font-size: 0.9rem;">
+          Подходит для масштабирования и сложных бизнес-кейсов
+        </p>
+        <button class="cta-button">Выбрать Премиум</button>
       </div>
     </div>
-
-    <!-- Оптимум -->
-    <div class="bg-[#1a1a1d] border border-cyan-500 p-6 rounded-xl flex flex-col justify-between shadow-lg shadow-cyan-500/10">
-      <div>
-        <h3 class="text-xl font-bold mb-2">Оптимум</h3>
-        <p class="text-3xl font-bold text-cyan-300 mb-4">15 000 ₽</p>
-        <p class="text-sm opacity-80 mb-4">Бот + инструкция + 1 мес. поддержки</p>
-        <p class="text-sm opacity-60">Лучший выбор для первых продаж</p>
-      </div>
-    </div>
-
-    <!-- Премиум -->
-    <div class="bg-[#1a1a1d] border border-[#2e2e30] p-6 rounded-xl flex flex-col justify-between">
-      <div>
-        <h3 class="text-xl font-bold mb-2">Премиум</h3>
-        <p class="text-3xl font-bold text-cyan-300 mb-4">25 000 ₽</p>
-        <p class="text-sm opacity-80 mb-4">Всё из Оптимум + 3 мес. сопровождения</p>
-        <p class="text-sm opacity-60">Для масштабирования и сложных кейсов</p>
-      </div>
-    </div>
-
   </div>
 </section>
+
+<style>
+  .pricing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .price-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-card.popular {
+    border-color: #ff6b6b;
+    transform: scale(1.05);
+  }
+
+  .price-card.popular::before {
+    content: 'Популярный';
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: #ff6b6b;
+    color: white;
+    padding: 5px 40px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotate(45deg);
+  }
+
+  .price-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #48dbfb;
+  }
+
+  .price-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffeaa7;
+  }
+
+  .price-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .price-features {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .price-features li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .price-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00d2d3;
+    font-weight: bold;
+  }
+</style>
