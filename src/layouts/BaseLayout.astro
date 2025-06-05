@@ -17,9 +17,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <Footer />
 
     <!-- NEXTBOT чат -->
-    <script src="https://app.nextbot.ru/chat-widget-bundle-ver2.js"></script>
-    <script>
-      initializeChatWidget({
+    <script> const script = document.createElement('script');
+    script.src = "https://app.nextbot.ru/chat-widget-bundle-ver2.js";
+    script.onload = () => {
+        window.initializeChatWidget?.({
         agentId: "bdb96bb9-c438-46d0-906c-20925830f777",
         chatIconLineColor: "#fff",
         chatIconBackgroundColor: "#6881a1",
@@ -29,7 +30,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         textColorAutoInvite: "#000000",
         widgetBottom: "30",
         widgetRight: "30",
-      });
+        });
+    };
+    document.head.appendChild(script);
     </script>
   </body>
 </html>
