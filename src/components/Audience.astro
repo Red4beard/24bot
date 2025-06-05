@@ -4,7 +4,7 @@
 <section class="section" id="audience">
   <div class="container">
     <h2 class="section-title">👥 Кому подойдёт?</h2>
-    <div class="audience-grid">
+    <div class="audience">
       <div class="audience-card">
         <h3 class="audience-title">Блогерам и экспертам</h3>
         <p>Автоматизируйте ответы в социальных сетях и освободите время для создания контента</p>
@@ -32,24 +32,24 @@
   }
 
   .section-title {
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 300;
     margin-bottom: 40px;
     text-align: center;
-    background: linear-gradient(135deg, #ffffffd9, #ffffffd9);
+    background: linear-gradient(135deg, #f3f4f6, #f3f4f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .features {
+  .audience {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
   }
 
-  .feature-card {
+  .audience-card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 30px;
@@ -60,7 +60,7 @@
     overflow: hidden;
   }
 
-  .feature-card::before {
+  .audience-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -71,50 +71,19 @@
     transition: left 0.5s;
   }
 
-  .feature-card:hover::before {
+  .audience-card:hover::before {
     left: 100%;
   }
 
-  .feature-card:hover {
+  .audience-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 
-  .feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  .feature-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
-
-  .audience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-  }
-
-  .audience-card {
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(78, 84, 200, 0.2));
-    border-radius: 15px;
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .audience-card:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #008e8f, #008e8f);
-  }
-
   .audience-title {
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 300;
+    font-size: 1.25rem;
     margin-bottom: 10px;
-    color: #ffffffd9;
+    color: #f3f4f6;
   }
 </style>
