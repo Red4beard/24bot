@@ -1,38 +1,94 @@
 ---
 ---
-<header>
-  <div class="container">
-    <h1 class="hero-title">🧠 Умный бот для вашего бизнеса — за пару дней</h1>
-    <p class="hero-subtitle">
-      Создаю персонализированных ИИ-ботов, которые помогут вам автоматизировать ответы, консультации и продажи. Без лишней технической суеты.
-    </p>
+<header class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="logo">
+      <img src="/android-chrome-192x192.png" alt="24bot logo" width="32" height="32" />
+      <span>24bot</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#features">Что делает бот?</a>
+      <a href="#audience">Кому подойдёт</a>
+      <a href="#advantages">Почему удобно</a>
+      <a href="#deliverables">Что вы получите</a>
+      <a href="#pricing">Тарифы</a>
+    </nav>
+
+    <div class="actions">
+      <a href="#cta" class="cta-button">Заказать бота</a>
+    </div>
   </div>
 </header>
 
 <style>
-  header {
-    padding: 60px 0 80px;
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
+  .navbar {
+    background-color: #1a1a1d;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.2;
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .logo img {
+    border-radius: 8px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: #fff;
+  }
+
+  .actions .cta-button {
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+
+  .actions .cta-button:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
   }
 </style>
